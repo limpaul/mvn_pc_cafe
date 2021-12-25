@@ -1,0 +1,131 @@
+use pc;
+create table food(name varchar(20) primary key not null ,
+price int(100) default 0,
+count int default 0
+);
+insert into food values('김치볶음',5000, 5);
+insert into food values('참치졲음',5000, 5);
+insert into food values('떡복이',3000, 5);
+insert into food values('햄버거',5000, 5);
+insert into food values('인디아',5000, 5);
+insert into food values('진라면',3000, 5);
+insert into food values('주스',2000, 5);
+insert into food values('오므라이스',4000, 5);
+insert into food values('진라면',3000, 5);
+insert into food values('라면',3000, 5);
+insert into food values('삼양라면',3000, 5);
+insert into food values('바다',2000, 5);
+insert into food values('꼬치',10000, 5);
+insert into food values('채소',10000, 5);
+insert into food values('육개장',6000, 5);
+insert into food values('바베큐',8000, 5);
+insert into food values('부대찌게',15000, 5);
+insert into food values('일본라면',9000, 5);
+insert into food values('돼지라면',9000, 5);
+insert into food values('분식라면',4000, 5);
+insert into food values('소고기라면',3000, 5);
+insert into food values('부추라면',4000, 5);
+insert into food values('콩나물라면',5000, 5);
+insert into food values('신라면',3000, 5);
+insert into food values('일본라면2',10000, 5);
+insert into food values('두부햄',5000, 5);
+insert into food values('오잉',2000, 5);
+insert into food values('오징어',2000, 5);
+insert into food values('헬로짱',2000, 5);
+insert into food values('포카칩',2000, 5);
+insert into food values('쫀드기',2000, 5);
+insert into food values('초코링',2000, 5);
+insert into food values('고양이',3000, 5);
+insert into food values('맥심',1000, 5);
+insert into food values('바닐라',3000, 5);
+insert into food values('발라드',3000, 5);
+insert into food values('일본',4000, 5);
+insert into food values('제너러스',5000, 5);
+insert into food values('코코아',3000, 5);
+insert into food values('프롬하츠',2000, 5);
+insert into food values('핸즈',2000, 5);
+insert into food values('호주',6000, 5);
+insert into food values('미니',2000, 5);
+insert into food values('고래밥',2000, 5);
+insert into food values('꼬칼콘',2000, 5);
+insert into food values('꼬북칩',2000, 5);
+insert into food values('나나콘',2000, 5);
+insert into food values('도리토스',2000, 5);
+insert into food values('두부과자',2000, 5);
+insert into food values('스윙칩',2000, 5);
+insert into food values('쌀과자',2000, 5);
+insert into food values('오감자',2000, 5);
+insert into food values('짱구',2000, 5);
+
+
+select * from food;
+
+create table user(
+user_id varchar(20) primary key not null,
+user_pw varchar(20) not null,
+user_name varchar(20) not null,
+user_email varchar(20) not null,
+user_phonenumber varchar(20) not null,
+user_address varchar(20) not null
+);
+
+drop table usertime;
+create table usertime (
+user_id varchar(20), 
+remain_time int, 
+mount_of_money int);
+desc user;
+
+
+select * from user;
+select * from food;
+
+desc user;
+desc food;
+desc usertime;
+desc user;
+
+select usr.user_id, 
+usr.user_pw, 
+usr.user_name, 
+usr.user_email, 
+usr.user_phonenumber, 
+usr.user_address, 
+usrt.remain_time, 
+usrt.mount_of_money
+from user as usr
+inner 
+join usertime as usrt
+on usr.user_id = usrt.user_id;
+
+/*sql user_id, user_pw, remain_time*/
+select usr.user_id, usr.user_pw, usrt.remain_time
+from user as usr
+inner
+join usertime as usrt
+on usr.user_id = usrt.user_id
+where usr.user_id = 'test';
+
+/*user_id, mount_of_money, remain_time from user*/
+select usr.user_id, usrt.mount_of_money, usrt.remain_time
+from user as usr
+inner
+join usertime as usrt
+on usr.user_id = usrt.user_id
+where usr.user_id = ?;
+
+desc food;
+desc user;
+desc usertime;
+select * from user;
+select * from usertime;
+select * from user as a
+inner
+join usertime as b
+on a.user_id = b.user_id;
+select now();
+
+select * from user as usr
+inner join usertime as usrt
+on usr.user_id = usrt.user_id
+where usr.user_id = 'test';

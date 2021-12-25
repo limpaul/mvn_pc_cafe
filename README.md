@@ -10,3 +10,6 @@ pc 로그인 화면
 
 ![after](https://user-images.githubusercontent.com/37106871/147382260-c9404ac8-e46a-4e32-8b4a-82a9ab2a53d6.PNG)
 
+상품 주문 화면
+![food](https://user-images.githubusercontent.com/37106871/147382414-3a457a0a-8cc9-4427-b4ac-21ec743fd520.PNG)
+
